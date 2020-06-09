@@ -40,12 +40,13 @@ app.get('/:BRANCH_NAME', function (req, res) {
     res.redirect(`/${req.params.BRANCH_NAME}/${config.ENTRY_POINT_IN_REPO}`);
 });
 
-app.post("/githook", (req, res) => {
+app.post("/githook", security.verifyPostData, (req, res) => {
     console.log(req);
     const body = req.body;
     const branch = body.ref.replace("refs/heads/", "");
 
     const dirPath = path.join(defaultPathRepo , branch)
+    res.send("DONE");
     if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath);
         execSync("git clone " + config.GIT_REPO + " " + dirPath);
