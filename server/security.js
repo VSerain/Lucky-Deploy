@@ -1,4 +1,6 @@
 const config = require("./config");
+const crypto = require('crypto')
+
 
 module.exports = {
     checkValidUser(req) {
