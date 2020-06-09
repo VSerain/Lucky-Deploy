@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "strict": true,
+        "noImplicitReturns": true,      
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": false,
+        "module": "es2015",
+        "moduleResolution": "node",
+        "target": "es5",
+        "lib": [
+            "dom",
+            "es5",
+            "es2015.promise"
+        ],
+        "paths": {
+            "app/*": ["src/*"]
+        }
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

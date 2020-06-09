@@ -1,0 +1,39 @@
+{
+  "name": "vue-starter-kit-ts",
+  "version": "1.0.0",
+  "description": "A VueJs starter kit for boost a project starter whit typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently --kill-others \"npm run start-watch\" \"npm run serve\"",
+    "start-watch": "webpack --watch  --mode=development",
+    "serve": "python3 -m http.server 1234"
+  },
+  "author": "Victor Serain",
+  "license": "ISC",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.2",
+    "vue": "^2.6.10",
+    "vue-property-decorator": "^8.2.1",
+    "vue-router": "^3.0.7"
+  },
+  "devDependencies": {
+    "@reactivex/rxjs": "^6.5.2",
+    "@types/node": "^12.0.12",
+    "autoprefixer": "^9.6.1",
+    "concurrently": "^4.1.1",
+    "css-loader": "^3.0.0",
+    "html-loader": "^0.5.5",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.2",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  }
+}
