@@ -10,7 +10,7 @@ export default class HomeComponent extends Vue {
 
     mounted() {
         branchsController.branchsSubject.subscribe((branchs) => {
-            this.branchs = branchs;
+            this.branchs = branchs.sort((a,b) => new Date(a.lastUpdate).getTime() - new Date(b.lastUpdate).getTime());
         });
     }
 
