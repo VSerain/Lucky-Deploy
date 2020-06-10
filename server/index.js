@@ -93,7 +93,7 @@ app.post("/githook", security.verifyPostData, (req, res) => {
         item.lastUpdate = new Date();
         item.pusherAvatar = body.sender.avatar_url;
     }
-
+    console.log(db);
     fs.writeFileSync(path.join(__dirname, "db.json"), JSON.stringify(db));
 
     execSync(`cd ${dirPath} && git pull && ${config.AFTER_PULL_CMD}`);
