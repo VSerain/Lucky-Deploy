@@ -37,7 +37,7 @@ app.get('/branch/:BRANCH_NAME', (req, res) => {
         return res.sendStatus(404);
     }
 
-    res.redirect(`/${req.params.BRANCH_NAME}/${config.ENTRY_POINT_IN_REPO}`);
+    res.redirect(`/branch/${req.params.BRANCH_NAME}/${config.ENTRY_POINT_IN_REPO}`);
 });
 
 app.get("/list", (req, res) => {
@@ -93,7 +93,6 @@ app.post("/githook", security.verifyPostData, (req, res) => {
         item.lastUpdate = new Date();
         item.pusherAvatar = body.sender.avatar_url;
     }
-    console.log(db);
     fs.writeFileSync(path.join(__dirname, "db.json"), JSON.stringify(db));
 
     execSync(`cd ${dirPath} && git pull && ${config.AFTER_PULL_CMD}`);
