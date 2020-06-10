@@ -1,5 +1,7 @@
-import { HelloComponent } from "./HelloComponent/HelloComponent";
+import HomeComponent from "./HomeComponent/HomeComponent";
+import LoginComponent from "./LoginComponent/LoginComponent";
 
 export {
-    HelloComponent
+    HomeComponent,
+    LoginComponent
 }

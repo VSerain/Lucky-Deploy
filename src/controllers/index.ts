@@ -1,5 +1,9 @@
 import enthusiasmController from "./EnthusiasmController"
+import userController from "./UserController";
+import branchsController from "./BranchsController";
 
 export {
-    enthusiasmController
+    enthusiasmController,
+    userController,
+    branchsController
 }

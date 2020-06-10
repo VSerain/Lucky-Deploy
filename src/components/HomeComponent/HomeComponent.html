@@ -1,0 +1,34 @@
+<div>
+    <v-card
+        max-width="500"
+        class="mx-auto"
+    >
+        <v-card-text>
+            <v-img
+                src="./images/lucky.png"
+                height="200px"
+            ></v-img>
+
+            <v-card-title>
+                Lucky Deploy Branchs
+            </v-card-title>
+            <div class="text--primary">
+                <v-list subheader>
+                    <v-list-item
+                        v-for="item in branchs"
+                        :key="item.title"
+                        @click="showBranchView(item)"
+                    >
+                        <v-list-item-avatar>
+                            <v-img :src="item.pusherAvatar"></v-img>
+                        </v-list-item-avatar>
+                
+                        <v-list-item-content>
+                            <v-list-item-title v-text="item.title"></v-list-item-title>
+                            <v-list-item-subtitle v-text="item.lastUpdate"></v-list-item-subtitle>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+            </div>
+    </v-card>
+</div>

@@ -2,16 +2,20 @@ import "reflect-metadata";
 import Vue from "vue";
 import VueRouter from 'vue-router'
 
+import vuetify from "./plugins/vuetify";
 import Router from 'app/router';
-const config = {
-    
-}
 
 Vue.use(VueRouter)
 
+if (localStorage.getItem("apikey")) {
+    document.cookie = "user=" + localStorage.getItem("apikey");
+}
+
 let vue: Vue = new Vue({
     router: Router,
+    vuetify,
     data: {
-        config
     }
-}).$mount('#app');
+} as any).$mount('#app');
+
+window["$Vue"] = vue;

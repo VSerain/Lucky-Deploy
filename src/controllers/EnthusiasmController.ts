@@ -7,7 +7,6 @@ class EnthusiasmController {
     public _enthusiasm: number = 3;
 
     constructor() {
-        console.log(requestService);
     }
 
     set enthusiasm(n: number) {

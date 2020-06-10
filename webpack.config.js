@@ -1,5 +1,6 @@
 var path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
 module.exports = {
     entry: './src/index.ts',
@@ -44,9 +45,33 @@ module.exports = {
                 }
             },
             {
-                test: /\.(s*)css$/,
+                test: /\.s(c|a)ss$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader',
+                    {
+                        loader: 'sass-loader',
+                        // Requires sass-loader@^7.0.0
+                        options: {
+                            implementation: require('sass'),
+                            fiber: require('fibers'),
+                            indentedSyntax: true // optional
+                        },
+                        // Requires sass-loader@^8.0.0
+                        options: {
+                            implementation: require('sass'),
+                            sassOptions: {
+                                fiber: require('fibers'),
+                                indentedSyntax: true // optional
+                            },
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.css$/,
                 use:['style-loader','css-loader', 'sass-loader']
-            }
+            },
         ]
     },
     resolve: {
@@ -67,5 +92,12 @@ module.exports = {
     plugins: [
         // make sure to include the plugin for the magic
         new VueLoaderPlugin(),
+        new VuetifyLoaderPlugin({
+            match (originalTag, { kebabTag, camelTag, path, component }) {
+                if (kebabTag.startsWith('core-')) {
+                    return [camelTag, `import ${camelTag} from '@/components/core/${camelTag.substring(4)}.vue'`]
+                }
+            }
+        }),
     ]
 }

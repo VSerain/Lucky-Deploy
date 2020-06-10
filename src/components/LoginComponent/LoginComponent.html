@@ -1,0 +1,56 @@
+<div>
+    <v-container>
+        <v-card
+            class="mx-auto"
+            max-width="344"
+            v-if="loading"
+        >
+            <v-img
+                src="./images/lucky.png"
+                height="200px"
+            ></v-img>
+            <v-progress-linear
+                ndeterminate
+                color="yellow darken-2"
+            ></v-progress-linear>
+        </v-card>
+        <v-card
+            class="mx-auto"
+            max-width="344"
+            v-else
+        >
+            <v-card-text>
+                <v-img
+                    src="./images/lucky.png"
+                    height="200px"
+                ></v-img>
+
+                <v-card-title>
+                    Lucky Deploy Login
+                </v-card-title>
+                <div class="text--primary">
+                    <v-text-field
+                        @keyup.enter.native="login"
+                        v-model="username"
+                        label="Username"
+                    ></v-text-field>
+                    <v-text-field
+                        @keyup.enter.native="login"
+                        v-model="password"
+                        label="Password"
+                        type="password"
+                    ></v-text-field>
+                </div>
+            </v-card-text>
+            <v-card-actions>
+                <v-btn
+                    text
+                    color="deep-purple accent-4"
+                    @click="login"
+                >
+                    Login
+                </v-btn>
+            </v-card-actions>
+        </v-card>
+    </v-container>
+</div>

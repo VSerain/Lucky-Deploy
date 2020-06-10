@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently --kill-others \"npm run start-watch\" \"npm run serve\"",
-    "start-watch": "webpack --watch  --mode=development",
+    "dev-2": "concurrently --kill-others \"npm run start-watch\" \"npm run serve\"",
+    "dev": "webpack --watch  --mode=development",
     "serve": "python3 -m http.server 1234"
   },
   "author": "Victor Serain",
@@ -14,9 +14,12 @@
   "dependencies": {
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.2",
+    "sha256": "^0.2.0",
     "vue": "^2.6.10",
     "vue-property-decorator": "^8.2.1",
-    "vue-router": "^3.0.7"
+    "vue-router": "^3.0.7",
+    "vuetify": "^2.1.14",
+    "vuetify-loader": "^1.4.3"
   },
   "devDependencies": {
     "@reactivex/rxjs": "^6.5.2",
@@ -24,9 +27,11 @@
     "autoprefixer": "^9.6.1",
     "concurrently": "^4.1.1",
     "css-loader": "^3.0.0",
+    "fibers": "^5.0.0",
     "html-loader": "^0.5.5",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
+    "sass": "^1.26.8",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^6.0.4",
