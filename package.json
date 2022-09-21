@@ -18,7 +18,7 @@
     "vue": "^2.6.12",
     "vue-property-decorator": "^8.5.1",
     "vue-router": "^3.4.9",
-    "vuetify": "^2.3.19",
+    "vuetify": "^2.6.10",
     "vuetify-loader": "^1.6.0"
   },
   "devDependencies": {
